@@ -7,8 +7,7 @@ class Place(models.Model):
     latitude = models.FloatField()
     longitude = models.FloatField()
 
-    class Meta:
-        ordering = ['-pk']
 
-    def __str__(self):
-        return "{}, {}, [{}, {}]".format(self.city, self.country, self.latitude, self.longitude)
+class Group(models.Model):
+    name = models.CharField(max_length=50)
+    places = models.ManyToManyField(Place, related_name='groups', blank=True)
