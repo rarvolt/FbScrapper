@@ -189,6 +189,8 @@ class UpdatePlaceTest(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
         self.assertEqual(Place.objects.count(), 0)
 
+
+class DeletePlaceTest(APITestCase):
     def test_delete_place(self):
         """
         Test if can delete existing place 
